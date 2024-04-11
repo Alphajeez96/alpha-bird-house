@@ -1,0 +1,13 @@
+@import './tailwind.scss';
+
+*,
+*::before,
+*::after {
+  @apply box-border m-0 font-normal;
+}
+
+html,
+body {
+  @apply scroll-smooth;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
