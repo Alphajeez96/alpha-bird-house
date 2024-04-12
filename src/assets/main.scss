@@ -13,3 +13,31 @@ html,
 body {
   @apply scroll-smooth bg-gray font-poppins lg:overflow-hidden;
 }
+
+.inner-container {
+  @apply bg-black p-8 overflow-auto;
+  height: calc(100vh - 9rem);
+}
+
+/** Transparent Scroll Bar **/
+.transparent-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: transparent transparent;
+
+  &::-webkit-scrollbar {
+    width: 0px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+    border: 1px solid transparent;
+  }
+
+  &::-webkit-scrollbar-track {
+    background-color: transparent;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background-color: transparent;
+  }
+}

@@ -1,9 +1,8 @@
 <template>
   <section class="flex">
-    <aside>
-      <SideBar />
-    </aside>
-
-    <div class="flex-grow">ififi</div>
+    <SideBar />
+    <div class="flex-grow">
+      <slot />
+    </div>
   </section>
 </template>

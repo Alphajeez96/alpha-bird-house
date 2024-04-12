@@ -6,7 +6,7 @@
 
 <style scoped lang="scss">
 header {
-  @apply py-5 text-center;
+  @apply h-20 flex items-center justify-center;
 
   h1 {
     @apply text-white font-bold text-2xl font-inter;

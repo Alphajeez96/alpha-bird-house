@@ -1,3 +1,3 @@
 <template>
-  <p>BIRD HOUSES</p>
+  <section class="inner-container transparent-scrollbar">dkd</section>
 </template>
