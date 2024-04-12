@@ -1,7 +1,7 @@
 <template>
   <section class="flex">
-    <SideBar />
-    <div class="flex-grow">
+    <SideBar class="w-20" />
+    <div class="flex-grow w-5/6">
       <slot />
     </div>
   </section>
