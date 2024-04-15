@@ -1,5 +1,6 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import Home from '../views/Home.vue'
+import Occupants from '../views/Occupants.vue'
 import BirdHouses from '../views/BirdHouses.vue'
 import Dashboard from '@/layouts/Dashboard.vue'
 
@@ -16,6 +17,13 @@ const router = createRouter({
       path: '/bird-houses',
       name: 'bird-houses',
       component: BirdHouses,
+      meta: { layout: Dashboard }
+    },
+
+    {
+      path: '/bird-houses/:id',
+      name: 'occupants',
+      component: Occupants,
       meta: { layout: Dashboard }
     }
   ]
