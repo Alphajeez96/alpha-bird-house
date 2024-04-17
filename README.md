@@ -40,36 +40,20 @@ yarn build
 npm run lint
 ```
 
-
 <br/>
 
 # Project Outline
 
 ## Folder Structure
 
-<!-- <div style="overflow-x: auto;">
-  <table style="border-collapse: collapse; width: 100%;">
-    <thead>
-      <tr>
-        <th style="border: 1px solid grey; text-align: left;">Name</th>
-        <th style="border: 1px solid grey; text-align: left;">Age</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td style="border: 1px solid grey; text-align: left;">John Doe</td>
-        <td style="border: 1px solid grey; text-align: left;">30</td>
-      </tr>
-      <tr>
-        <td style="border: 1px solid grey; text-align: left;">Jane Smith</td>
-        <td style="border: 1px solid grey; text-align: left;">25</td>
-      </tr>
-    </tbody>
-  </table>
-</div> -->
-
-| Column 1 Header | Column 2 Header |
+| Folder | Description |
 |-----------------|-----------------|
-| Row 1, Column 1| Row 1, Column 2 |
-| Row 2, Column 1| Row 2, Column 2 |
+| Assets |  Project assets, style sheets inclusive  |
+| Components |  Components and reusable icons within the system.  |
+| Composables |  Modular reusable state and logic  |
+| Layouts | Page layout for the system |
+| Router | Application routes and configurations |
+| Stores | State management module for the system |
+| Types | Reusable type definitons and interfaces  |
+| Views | Pages for existing routes within the system  |
 
