@@ -54,7 +54,10 @@ const chartOptions = {
   stroke: { curve: 'smooth' },
   dataLabels: { enabled: false },
   markers: { size: 5, hover: { size: 6, sizeOffset: 3 } },
-  yaxis: { labels: { style: { fontSize: '12px', colors: '#7e7e80' } } },
+  yaxis: {
+    labels: { style: { fontSize: '12px', colors: '#7e7e80' } }
+  },
+
   xaxis: {
     type: 'category',
     categories: [...daysOfWeek],
