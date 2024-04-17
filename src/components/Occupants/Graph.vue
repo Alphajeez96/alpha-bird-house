@@ -102,7 +102,6 @@ const groupByDayOfWeek = (occupants: Occupant[] | undefined) => {
     }
   })
 
-  // Update series data
   series.value.forEach((item, index) => {
     item.data = daysOfWeek.map((day) => groupedData[day][index])
   })
