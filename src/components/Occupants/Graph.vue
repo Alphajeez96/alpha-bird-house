@@ -20,8 +20,13 @@
 <script setup lang="ts">
 import { computed, onMounted } from 'vue'
 import { format } from 'date-fns'
-import type { Occupant } from '@/types/global'
+import type { Occupant } from '../../types/global'
+// @ts-ignore
 import ApexChart from 'vue3-apexcharts'
+
+interface GroupedData {
+  [key: string]: number[]
+}
 
 const daysOfWeek: string[] = [
   'Monday',
@@ -65,23 +70,13 @@ const series: { name: string; data: number[] }[] = [
 ]
 
 onMounted(() => {
-  groupByDayOfWeek(props.occupants)
+  groupByDayOfWeek(props?.occupants)
 })
 
 const groupByDayOfWeek = (occupants: Occupant[] | undefined) => {
   if (!occupants) return
 
-  //   const groupedData: Record<string, number[]> = {
-  //     Monday: [0, 0],
-  //     Tuesday: [0, 0],
-  //     Wednesday: [0, 0],
-  //     Thursday: [0, 0],
-  //     Friday: [0, 0],
-  //     Saturday: [0, 0],
-  //     Sunday: [0, 0]
-  //   }
-
-  const groupedData: Record<string, number[]> = daysOfWeek.reduce((acc, day) => {
+  const groupedData: GroupedData = daysOfWeek.reduce((acc: GroupedData, day) => {
     acc[day] = [0, 0]
     return acc
   }, {})

@@ -37,7 +37,7 @@
 
 <script lang="ts" setup>
 import { format } from 'date-fns'
-import type { Occupant } from '@/types/global'
+import type { Occupant } from '../../types/global'
 
 defineProps<{
   occupants: Occupant[] | undefined
