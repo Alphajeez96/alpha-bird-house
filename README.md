@@ -47,7 +47,7 @@ npm run lint
 
 ## Folder Structure
 
-<div style="overflow-x: auto;">
+<!-- <div style="overflow-x: auto;">
   <table style="border-collapse: collapse; width: 100%;">
     <thead>
       <tr>
@@ -66,5 +66,10 @@ npm run lint
       </tr>
     </tbody>
   </table>
-</div>
+</div> -->
+
+| Column 1 Header | Column 2 Header |
+|-----------------|-----------------|
+| Row 1, Column 1| Row 1, Column 2 |
+| Row 2, Column 1| Row 2, Column 2 |
 
