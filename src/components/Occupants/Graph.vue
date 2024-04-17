@@ -18,11 +18,16 @@
 </template>
 
 <script setup lang="ts">
-import { computed, onMounted } from 'vue'
+import { ref, type Ref, computed, onMounted, watch } from 'vue'
 import { format } from 'date-fns'
 import type { Occupant } from '../../types/global'
 // @ts-ignore
 import ApexChart from 'vue3-apexcharts'
+
+interface Series {
+  name: string
+  data: number[]
+}
 
 interface GroupedData {
   [key: string]: number[]
@@ -64,11 +69,18 @@ const chartOptions = {
   colors: ['#379cff', '#744f9a']
 }
 
-const series: { name: string; data: number[] }[] = [
+const series: Ref<Series[]> = ref([
   { name: 'Birds', data: [] },
   { name: 'Eggs', data: [] }
-]
+])
 
+watch(
+  () => props?.occupants,
+  (newValue) => {
+    if (newValue) groupByDayOfWeek(newValue)
+  },
+  { deep: true }
+)
 onMounted(() => {
   groupByDayOfWeek(props?.occupants)
 })
@@ -76,10 +88,10 @@ onMounted(() => {
 const groupByDayOfWeek = (occupants: Occupant[] | undefined) => {
   if (!occupants) return
 
-  const groupedData: GroupedData = daysOfWeek.reduce((acc: GroupedData, day) => {
-    acc[day] = [0, 0]
-    return acc
-  }, {})
+  const groupedData: GroupedData = {}
+  for (const day of daysOfWeek) {
+    groupedData[day] = [0, 0]
+  }
 
   occupants.forEach((occupant) => {
     const dayOfWeek = format(new Date(occupant.created_at), 'EEEE')
@@ -91,7 +103,7 @@ const groupByDayOfWeek = (occupants: Occupant[] | undefined) => {
   })
 
   // Update series data
-  series.forEach((item, index) => {
+  series.value.forEach((item, index) => {
     item.data = daysOfWeek.map((day) => groupedData[day][index])
   })
 }

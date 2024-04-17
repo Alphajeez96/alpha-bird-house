@@ -55,7 +55,7 @@
     </div>
   </section>
 
-  <div v-if="isOverview" class="pagination-holder">
+  <div class="pagination-holder">
     <Pagination
       :meta="metaData"
       :disabled="loading"
