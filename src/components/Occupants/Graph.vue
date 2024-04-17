@@ -52,8 +52,10 @@ const graphHeight = computed<number>(() => window.innerHeight - 320)
 const chartOptions = {
   legend: { show: false },
   stroke: { curve: 'smooth' },
+  colors: ['#379cff', '#744f9a'],
   dataLabels: { enabled: false },
   markers: { size: 5, hover: { size: 6, sizeOffset: 3 } },
+
   yaxis: {
     labels: { style: { fontSize: '12px', colors: '#7e7e80' } }
   },
@@ -68,8 +70,7 @@ const chartOptions = {
     borderColor: '#363839',
     strokeDashArray: 2,
     xaxis: { lines: { show: true } }
-  },
-  colors: ['#379cff', '#744f9a']
+  }
 }
 
 const series: Ref<Series[]> = ref([
